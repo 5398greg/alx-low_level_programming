@@ -13,3 +13,7 @@
 ##0x03-debugging
 
 *It aims to learn how to debug in C language
+
+##0x04. C - More functions, more nested loops
+
+*It aims at What are nested loops and how to use them
