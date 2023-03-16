@@ -1,43 +1,33 @@
 #include "main.h"
 #include <stdlib.h>
-
 /**
- * alloc_grid - returns a pointer to a 2 dimensional array of integers.
- * @width: width of the array.
- * @height: height of the array.
+ * _calloc - allocates memory for an array.
+ * @nmemb: number of elements.
+ * @size: size of bytes.
  *
- * Return: pointer of an array of integers
+ * Return: pointer to the allocated memory.
+ * if nmemb or size is 0, returns NULL.
+ * if malloc fails, returns NULL.
  */
-int **alloc_grid(int width, int height)
+void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	int **gridout;
-	int i, j;
+	char *p;
+	unsigned int i;
 
-	if (width < 1 || height < 1)
+	if (nmemb == 0 || size == 0)
 		return (NULL);
 
-	gridout = malloc(height * sizeof(int *));
-	if (gridout == NULL)
-	{
-		free(gridout);
+	p = malloc(nmemb * size);
+
+	if (p == NULL)
 		return (NULL);
-	}
 
-	for (i = 0; i < height; i++)
-	{
-		gridout[i] = malloc(width * sizeof(int));
-		if (gridout[i] == NULL)
-		{
-			for (i--; i >= 0; i--)
-				free(gridout[i]);
-			free(gridout);
-			return (NULL);
-		}
-	}
+	for (i = 0; i < (nmemb * size); i++)
+		p[i] = 0;
 
-	for (i = 0; i < height; i++)
-		for (j = 0; j < width; j++)
-			gridout[i][j] = 0;
-
-	return (gridout);
+	return (p);
 }
+
+
+
+
