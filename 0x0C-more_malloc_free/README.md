@@ -1,6 +1,6 @@
 | Filename | Description |
 | -------- | ----------- |
-| `0-create_array.c` | Creates an array of chars, and initializes it with a specific char |
-| `1-strdup.c` | Returns a pointer to a newly allocated space in memory, which contains a copy of the string given as a parameter |
-| `2-str_concat.c` | Concatenates two strings |
-| `3-alloc_grid.c` | Returns a pointer to a 2 dimensional array of integers |
+| `0-malloc_checked.c` | Allocates memory using `malloc` |
+| `1-string_nconcat.c` | Concatenates two strings |
+| `2-calloc.c` | Allocates memory for an array, using `malloc` |
+| `3-array_range.c` | Creates an array of integers |
